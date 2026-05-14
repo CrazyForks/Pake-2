@@ -20,7 +20,7 @@ import { InvalidArgumentError, program as program$1, Option } from 'commander';
 import fs$1 from 'fs';
 
 var name = "pake-cli";
-var version = "3.11.5";
+var version = "3.11.6";
 var description = "🤱🏻 Turn any webpage into a desktop app with one command. 🤱🏻 一键打包网页生成轻量桌面应用。";
 var engines = {
 	node: ">=18.0.0"
@@ -464,6 +464,7 @@ function buildWindowConfigOverrides(options, platform = asSupportedPlatform(proc
         start_to_tray: options.startToTray && options.showSystemTray,
         force_internal_navigation: options.forceInternalNavigation,
         internal_url_regex: options.internalUrlRegex,
+        enable_find: options.enableFind,
         zoom: options.zoom,
         min_width: options.minWidth,
         min_height: options.minHeight,
@@ -2402,6 +2403,7 @@ const DEFAULT_PAKE_OPTIONS = {
     startToTray: false,
     forceInternalNavigation: false,
     internalUrlRegex: '',
+    enableFind: false,
     iterativeBuild: false,
     zoom: 100,
     minWidth: 0,
@@ -2540,6 +2542,9 @@ ${green('|_|   \\__,_|_|\\_\\___|  can turn any webpage into a desktop app with 
         .hideHelp())
         .addOption(new Option('--internal-url-regex <string>', 'Regex pattern to match URLs that should be considered internal')
         .default(DEFAULT_PAKE_OPTIONS.internalUrlRegex)
+        .hideHelp())
+        .addOption(new Option('--enable-find', 'Enable in-page Find UI with Cmd/Ctrl+F/G shortcuts')
+        .default(DEFAULT_PAKE_OPTIONS.enableFind)
         .hideHelp())
         .addOption(new Option('--installer-language <string>', 'Installer language')
         .default(DEFAULT_PAKE_OPTIONS.installerLanguage)

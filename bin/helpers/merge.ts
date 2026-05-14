@@ -49,6 +49,7 @@ export function buildWindowConfigOverrides(
     start_to_tray: options.startToTray && options.showSystemTray,
     force_internal_navigation: options.forceInternalNavigation,
     internal_url_regex: options.internalUrlRegex,
+    enable_find: options.enableFind,
     zoom: options.zoom,
     min_width: options.minWidth,
     min_height: options.minHeight,

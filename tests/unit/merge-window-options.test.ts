@@ -85,6 +85,7 @@ describe('buildWindowConfigOverrides', () => {
         enableDragDrop: true,
         ignoreCertificateErrors: true,
         newWindow: true,
+        enableFind: true,
         forceInternalNavigation: true,
         internalUrlRegex: '^https://example\\.com',
       }),
@@ -100,6 +101,7 @@ describe('buildWindowConfigOverrides', () => {
       enable_drag_drop: true,
       ignore_certificate_errors: true,
       new_window: true,
+      enable_find: true,
       force_internal_navigation: true,
       internal_url_regex: '^https://example\\.com',
     });
